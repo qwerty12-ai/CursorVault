@@ -14,16 +14,16 @@ The project is designed around a dataset of **~200,000 products** and focuses on
 
 ## Live Demo
 
-**Production API Base URL**
-`https://cursorvault.onrender.com`
+**Production API Base URL**  
+[https://cursorvault.onrender.com](https://cursorvault.onrender.com)
 
 **Deployed Stack**
 - **Backend hosting:** Render
 - **Production database:** Aiven MySQL
 
 **Public endpoints**
-- **Health check:** `GET https://cursorvault.onrender.com/`
-- **Products API:** `GET https://cursorvault.onrender.com/api/products`
+- **Health check:** `GET /` → [https://cursorvault.onrender.com/](https://cursorvault.onrender.com/)
+- **Products API:** `GET /api/products` → [https://cursorvault.onrender.com/api/products](https://cursorvault.onrender.com/api/products)
 
 **Example production requests**
 ```http
@@ -427,7 +427,7 @@ node scripts/seedProducts.js
 
 **1. Clone the repository**
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/qwerty12-ai/CursorVault.git
 cd CursorVault
 ```
 
