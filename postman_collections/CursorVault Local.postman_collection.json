@@ -1,0 +1,242 @@
+{
+  "info": {
+    "_postman_id": "138bd0c3-892f-4773-ab8e-bb71293ada04",
+    "name": "CursorVault Local",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47626543",
+    "_collection_link": "https://go.postman.co/collection/47626543-138bd0c3-892f-4773-ab8e-bb71293ada04?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "health check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "test db",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/test-db",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "test-db"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "next page using cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?cursor=MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5ODE=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5ODE="
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "custom limit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?limit=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category filter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?category=Books",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category + limit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?category=Books&limit=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category +  cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?category=Books&cursor=MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5MjE=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5MjE="
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category + limit + cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/products?category=Books&limit=5&cursor=MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5NzU=",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            },
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxNTozODoyM3wxOTk5NzU="
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

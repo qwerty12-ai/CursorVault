@@ -12,6 +12,32 @@ The project is designed around a dataset of **~200,000 products** and focuses on
 
 ---
 
+## Live Demo
+
+**Production API Base URL**
+`https://cursorvault.onrender.com`
+
+**Deployed Stack**
+- **Backend hosting:** Render
+- **Production database:** Aiven MySQL
+
+**Public endpoints**
+- **Health check:** `GET https://cursorvault.onrender.com/`
+- **Products API:** `GET https://cursorvault.onrender.com/api/products`
+
+**Example production requests**
+```http
+GET https://cursorvault.onrender.com/api/products
+GET https://cursorvault.onrender.com/api/products?limit=5
+GET https://cursorvault.onrender.com/api/products?category=Books
+GET https://cursorvault.onrender.com/api/products?category=Books&limit=5
+GET https://cursorvault.onrender.com/api/products?category=Books&limit=5&cursor=<base64-cursor>
+```
+
+> **Note:** The app is deployed on Render's free tier, so the first request after inactivity may take a few extra seconds while the service wakes up.
+
+---
+
 ## Overview
 
 This project was built as a backend exercise around a simple but realistic problem:
@@ -90,6 +116,10 @@ The project includes:
 
 ```
 CursorVault/
+│
+├── postman_collections/
+│   ├── CursorVault Local.postman_collection.json
+│   └── CursorVault Production.postman_collection.json
 │
 ├── scripts/
 │   └── seedProducts.js
@@ -460,26 +490,58 @@ PORT=5000
 
 ---
 
+## Postman Collections
+
+This repository includes Postman collections for both local and deployed testing inside the `postman_collections/` folder.
+
+**Included collections**
+- `CursorVault Local.postman_collection.json`
+- `CursorVault Production.postman_collection.json`
+
+**Covered requests**
+
+The collections include requests for:
+- Health check
+- Database connectivity test
+- Products listing
+- Products listing with custom limit
+- Products listing filtered by category
+- Next page retrieval using cursor
+- Combined query scenarios such as:
+  - category + limit
+  - category + cursor
+  - category + limit + cursor
+
+This makes it easy to test both local and deployed behavior without manually recreating requests.
+
+---
+
 ## AI Usage
 
-AI tools were used during development as a productivity aid, mainly for:
-- Discussing cursor pagination design
-- Checking SQL/query edge cases
-- Reviewing API structure and README wording
-- Debugging a few implementation mistakes during development
+AI tools were used during development as a productivity and learning aid, mainly for:
+- Understanding the cursor-based pagination approach for this problem
+- Thinking through the SQL query structure for pagination and category filtering
+- Understanding the indexing strategy for the main query patterns
+- Reviewing edge cases around ordering, cursors, and pagination metadata
+- Debugging implementation and environment/configuration issues
+- Improving the README structure and technical explanations
 
-I still manually worked through the final implementation details, especially around:
-- Query construction
-- Cursor encoding / decoding
-- Ordering by `updated_at DESC, id DESC`
-- Handling the `limit + 1` pagination pattern
-- Creating the indexes for the two query patterns
+I still built, configured, and tested the project myself, including:
+- Setting up the backend project structure and API routes
+- Creating the database schema and indexes in MySQL
+- Generating and seeding the dataset
+- Deploying the API to Render and the production database to Aiven
+- Connecting the application to the hosted database
+- Testing local and production endpoints with Postman
+
 
 A few bugs and mistakes were caught and fixed during implementation, including:
 - Mismatched SQL placeholders vs values
 - Incorrect SQL string spacing in the `WHERE` clause
 - Cursor timestamp formatting mismatches
-- A temporary database connection config issue while testing locally
+- A temporary database connection config issue while testing locally and while switching to the hosted production database
+
+In short, AI was used as a development assistant for learning, design discussion, debugging, and documentation support, while the final project setup, deployment, and testing were completed by me.
 
 ---
 

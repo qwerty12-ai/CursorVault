@@ -1,0 +1,232 @@
+{
+  "info": {
+    "_postman_id": "13e70e47-50f8-488c-a612-bb5950124fe1",
+    "name": "CursorVault Production",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "47626543",
+    "_collection_link": "https://go.postman.co/collection/47626543-13e70e47-50f8-488c-a612-bb5950124fe1?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "products",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "next page using cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?cursor=MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5ODE=",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5ODE=",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "custom limit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?limit=5",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "5",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category filter",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?category=Books",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category + limit",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?category=Books&limit=5",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category  + cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?category=Books&cursor=MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5MjE=",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5MjE="
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "category + limit + cursor",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://cursorvault.onrender.com/api/products?category=Books&limit=5&cursor=MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5ODI=",
+          "protocol": "https",
+          "host": [
+            "cursorvault",
+            "onrender",
+            "com"
+          ],
+          "path": [
+            "api",
+            "products"
+          ],
+          "query": [
+            {
+              "key": "category",
+              "value": "Books"
+            },
+            {
+              "key": "limit",
+              "value": "5"
+            },
+            {
+              "key": "cursor",
+              "value": "MjAyNi0wNi0yNCAxODoxMToxM3wxOTk5ODI="
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
