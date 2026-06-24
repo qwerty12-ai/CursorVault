@@ -1,6 +1,8 @@
 const mysql = require("mysql2/promise");
 require("dotenv").config();
 
+const useSSL = process.env.DB_SSL === "true";
+
 const pool = mysql.createPool({
     host: process.env.DB_HOST,
     port: Number(process.env.DB_PORT) || 3306,
